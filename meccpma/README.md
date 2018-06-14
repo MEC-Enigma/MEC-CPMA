@@ -1,6 +1,6 @@
-# meccpma
+# MÉC-CPMA
 
-A cross platform mobile application made with Flutter for Mahindra Ecole Centrale
+A cross platform mobile application made with Flutter for Mahindra École Centrale
 
 ## Getting Started
 

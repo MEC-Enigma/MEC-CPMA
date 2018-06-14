@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'second_page.dart';
 import 'dart:async';
 
 class HomePage extends StatefulWidget {
@@ -14,13 +13,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> menu = <Widget>[new IconButton(
-      icon: new Icon(Icons.image),
-      tooltip: 'Second screen',
-      onPressed: _toSecondPage,
-    ),
-    ];
-
     return new Scaffold(
       body: _buildBody(),);
   }
@@ -52,14 +44,6 @@ class _HomePageState extends State<HomePage> {
 
     return new Center(child: column);
 
-  }
-
-  Future _toSecondPage() async {
-    Navigator.of(context).push(new MaterialPageRoute<dynamic>(
-      builder: (BuildContext context) {
-        return new SecondPage();
-      },
-    ));
   }
 
 }

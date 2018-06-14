@@ -14,13 +14,13 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Box Decoration and Stack example"),
+        title: new Text("MainPage"),
       ),
       body: _buildBody(),
     );
   }
 
   Widget _buildBody() {
-    return new Text('Tutorial in progress');
+    return new Text('Main page features');
   }
 }
