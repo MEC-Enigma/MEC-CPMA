@@ -28,6 +28,7 @@ flutter:
   assets:
     - assets/mec.png
     - assets/mec.jpg
+    - assets/mec_side.jpg
 
   fonts:
     - family: Times New Roman

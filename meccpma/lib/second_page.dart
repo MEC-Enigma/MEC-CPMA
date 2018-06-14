@@ -12,15 +12,14 @@ class _SecondPageState extends State<SecondPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("MainPage"),
-      ),
-      body: _buildBody(),
+    var titleLogo = new Image(
+      image: new AssetImage('assets/mec_side.jpg'));
+    var layout = new Column(
+      children: <Widget>[
+        titleLogo,
+      ],
     );
+    return Container(decoration: new BoxDecoration(color: Color(0xfff8f8f8)), child: layout);
   }
 
-  Widget _buildBody() {
-    return new Text('Main page features');
-  }
 }

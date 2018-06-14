@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'second_page.dart';
 import 'dart:async';
 
 class HomePage extends StatefulWidget {
@@ -31,6 +32,8 @@ class _HomePageState extends State<HomePage> {
           fontStyle: FontStyle.normal,
           fontFamily: 'Times New Roman'),
     );
+
+    var navButton = new IconButton(icon: new Icon(Icons.arrow_forward), onPressed: _toSecondPage);
     var column = new Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -38,12 +41,20 @@ class _HomePageState extends State<HomePage> {
       children: <Widget>[
         mecLogo,
         mahindraText,
-        ecoleText
+        ecoleText,
+        navButton
       ],
     );
 
     return new Center(child: column);
 
+  }
+  Future _toSecondPage() async {
+    Navigator.of(context).push(new MaterialPageRoute<dynamic>(
+      builder: (BuildContext context) {
+      return new SecondPage();
+    },
+    ));
   }
 
 }
