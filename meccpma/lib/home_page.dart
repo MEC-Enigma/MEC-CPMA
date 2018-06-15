@@ -38,7 +38,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 }
 
 class TheGridView {
-  GestureDetector makeGridCell(String name, IconData icon, Color cardcolor, String page, BuildContext context) {
+  GestureDetector makeGridCell(String name, IconData icon, Color cardcolor, BuildContext context) {
     var modifyIcon = new Icon(icon,
       size: 75.0,
       textDirection: TextDirection.ltr,
@@ -66,37 +66,37 @@ class TheGridView {
 
     var redirect;
 
-    if(page == 'Login') {
+    if(name == 'Login') {
       redirect = GestureDetector(
         onTap: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Login()));},
         child: optionCard,
       );
     }
-    else if(page == 'About') {
+    else if(name == 'About us') {
       redirect = GestureDetector(
         onTap: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new About()));},
         child: optionCard,
       );
     }
-    else if(page == 'Gallery') {
+    else if(name == 'Gallery') {
       redirect = GestureDetector(
         onTap: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Gallery()));},
         child: optionCard,
       );
     }
-    else if(page == 'Blog') {
+    else if(name == 'Blog') {
       redirect = GestureDetector(
         onTap: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Blog()));},
         child: optionCard,
       );
     }
-    else if(page == 'Social') {
+    else if(name == 'Social media') {
       redirect = GestureDetector(
         onTap: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Social()));},
         child: optionCard,
       );
     }
-    else if(page == 'Help') {
+    else if(name == 'Help') {
       redirect = GestureDetector(
         onTap: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Help()));},
         child: optionCard,
@@ -120,12 +120,12 @@ class TheGridView {
         mainAxisSpacing: 3.0,
         crossAxisSpacing: 3.0,
         children: <Widget>[
-          makeGridCell("About us", Icons.ac_unit, Colors.green, 'About', context),
-          makeGridCell("Gallery", Icons.image, Colors.blue, 'Gallery', context),
-          makeGridCell("Blog", Icons.chat_bubble, Colors.red, 'Blog', context),
-          makeGridCell("Social media", Icons.chat, Colors.blueGrey, 'Social', context),
-          makeGridCell("Login", Icons.people, Colors.amber, 'Login', context),
-          makeGridCell("Help", Icons.help, Colors.orange, 'Help', context),
+          makeGridCell("About us", Icons.ac_unit, Colors.green, context),
+          makeGridCell("Gallery", Icons.image, Colors.blue, context),
+          makeGridCell("Blog", Icons.chat_bubble, Colors.red, context),
+          makeGridCell("Social media", Icons.chat, Colors.blueGrey, context),
+          makeGridCell("Login", Icons.people, Colors.amber, context),
+          makeGridCell("Help", Icons.help, Colors.orange, context),
 
         ]);
   }
