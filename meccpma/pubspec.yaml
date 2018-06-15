@@ -30,6 +30,7 @@ flutter:
     - assets/mec.png
     - assets/mec.jpg
     - assets/mec_side.jpg
+    - assets/outlook.png
 
   fonts:
     - family: Times New Roman
