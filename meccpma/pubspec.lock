@@ -71,6 +71,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
+  dictionary:
+    dependency: "direct main"
+    description:
+      name: dictionary
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.4"
+  either:
+    dependency: transitive
+    description:
+      name: either
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.7"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -186,6 +200,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.1"
+  option:
+    dependency: transitive
+    description:
+      name: option
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.3"
   package_config:
     dependency: transitive
     description:
