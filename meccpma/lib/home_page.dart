@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'login.dart';
 import 'about.dart';
 import 'gallery.dart';
@@ -19,18 +20,14 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
 
   var titleLogo = new Image(
-    image: new AssetImage('assets/mec_side.jpg'),
-    width: 200.0,);
+    image: new AssetImage('assets/mec_side.png'),
+    width: 100.0,);
 
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Color(0xfff8f8f8),
-            title: Center(child: titleLogo),
-          ),
           body: TheGridView().build(context)
       ),
     );
@@ -114,11 +111,11 @@ class TheGridView {
   GridView build(BuildContext context) {
     return GridView.count(
         primary: true,
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(100.0),
         crossAxisCount: 2,
         childAspectRatio: 1.0,
-        mainAxisSpacing: 3.0,
-        crossAxisSpacing: 3.0,
+        mainAxisSpacing: 100.0,
+        crossAxisSpacing: 100.0,
         children: <Widget>[
           makeGridCell("About us", Icons.ac_unit, Colors.green, context),
           makeGridCell("Gallery", Icons.image, Colors.blue, context),
