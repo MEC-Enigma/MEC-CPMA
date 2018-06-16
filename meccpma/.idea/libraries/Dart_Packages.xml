@@ -100,6 +100,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_statusbarcolor">
+          <value>
+            <list>
+              <option value="$USER_HOME$/flutter_development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_statusbarcolor-0.0.3/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_test">
           <value>
             <list>
@@ -417,6 +424,7 @@
       <root url="file://$USER_HOME$/flutter_development/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-0.1.2/lib" />
       <root url="file://$USER_HOME$/flutter_development/flutter/.pub-cache/hosted/pub.dartlang.org/dictionary-0.2.4/lib" />
       <root url="file://$USER_HOME$/flutter_development/flutter/.pub-cache/hosted/pub.dartlang.org/either-0.1.7/lib" />
+      <root url="file://$USER_HOME$/flutter_development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_statusbarcolor-0.0.3/lib" />
       <root url="file://$USER_HOME$/flutter_development/flutter/.pub-cache/hosted/pub.dartlang.org/front_end-0.1.0-alpha.12/lib" />
       <root url="file://$USER_HOME$/flutter_development/flutter/.pub-cache/hosted/pub.dartlang.org/glob-1.1.5/lib" />
       <root url="file://$USER_HOME$/flutter_development/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.13.3/lib" />

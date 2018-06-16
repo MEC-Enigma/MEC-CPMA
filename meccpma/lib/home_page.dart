@@ -9,6 +9,8 @@ import 'help.dart';
 import 'second_page.dart';
 import 'package:carousel/carousel.dart';
 
+var appbarColor = Color(0xfff44336);
+var iconsColor = Color(0xfff44336);
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -17,11 +19,13 @@ class HomePage extends StatefulWidget {
   HomePageState createState() => new HomePageState();
 }
 
+
 class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
 
   var titleLogo = new Image(
     image: new AssetImage('assets/mec.png'),
     width: 50.0,);
+
 
   Widget testBGCarousel = new Container(
     padding: EdgeInsets.symmetric(vertical: 10.0),
@@ -35,6 +39,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
     ),
   );
 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,14 +48,14 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 
           appBar: AppBar(
             elevation: 4.0,
-            backgroundColor: Color(0xfff8f8f8),
+            backgroundColor: appbarColor,
             title: new Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Container(padding: EdgeInsets.only(right: 5.0),child: titleLogo),
                 new Text(' Leader - Innovator - Entrepreneur',
                   style: TextStyle(
-                    color: Color(0xff6b6767)
+                    color: Color(0xffffffff)
                     )
                   ,),
               ],
@@ -64,14 +69,14 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
               new Expanded(
                 flex: 5,
                 child: new Container(
-                  color: Color(0xfff8f8f8),
+                  color: Color(0xffffffff),
                   child: testBGCarousel,
                 )
               ),
               new Expanded(
                 flex: 5,
                 child: new Container(
-                  color: Color(0xfff8f8f8),
+                  color: Color(0xffffffff),
                   child: TheGridView().build(context),
                   )
                 )
@@ -83,8 +88,9 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
   }
 }
 
+
 class TheGridView {
-  GestureDetector makeGridCell(String name, IconData icon, Color cardcolor, BuildContext context) {
+  GestureDetector makeGridCell(String name, IconData icon, BuildContext context) {
     var modifyIcon = new Icon(icon,
       size: 50.0,
       textDirection: TextDirection.ltr,
@@ -99,7 +105,7 @@ class TheGridView {
 
     var optionCard = new Card(
       elevation: 5.0,
-      color: cardcolor,
+      color: iconsColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -167,16 +173,17 @@ class TheGridView {
         mainAxisSpacing: 3.0,
         crossAxisSpacing: 3.0,
         children: <Widget>[
-          makeGridCell("About us", Icons.home, Colors.green, context),
-          makeGridCell("Gallery", Icons.image, Colors.pinkAccent, context),
-          makeGridCell("Blog", Icons.chat, Colors.red, context),
-          makeGridCell("Social media", Icons.ac_unit, Colors.blueGrey, context),
-          makeGridCell("Login", Icons.people, Colors.blue, context),
-          makeGridCell("Help", Icons.help, Colors.orange, context),
+          makeGridCell("About us", Icons.home, context),
+          makeGridCell("Gallery", Icons.image, context),
+          makeGridCell("Blog", Icons.chat, context),
+          makeGridCell("Social media", Icons.ac_unit, context),
+          makeGridCell("Login", Icons.people, context),
+          makeGridCell("Help", Icons.help, context),
 
         ]);
 
      return grid;
   }
+
 
 }
