@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'login.dart';
 import 'about.dart';
 import 'gallery.dart';
@@ -8,6 +7,7 @@ import 'social.dart';
 import 'help.dart';
 
 import 'second_page.dart';
+import 'package:carousel/carousel.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -20,16 +20,65 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
 
   var titleLogo = new Image(
-    image: new AssetImage('assets/mec_side.png'),
-    width: 100.0,);
+    image: new AssetImage('assets/mec.png'),
+    width: 50.0,);
 
+  Widget testBGCarousel = new Container(
+    padding: EdgeInsets.symmetric(vertical: 10.0),
+    child: new Carousel(
+      children: [
+        new AssetImage('assets/mec1.jpg'),
+        new AssetImage('assets/mec2.jpg'),
+        new AssetImage('assets/mec3.jpg'),
+      ].map((bgImg) => new Image(image: bgImg, width: 400.0, height: 400.0, fit: BoxFit.fill)).toList(),
+      displayDuration: const Duration(seconds: 5),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          body: TheGridView().build(context)
-      ),
+          primary: true,
+
+          appBar: AppBar(
+            elevation: 4.0,
+            backgroundColor: Color(0xfff8f8f8),
+            title: new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Container(padding: EdgeInsets.only(right: 5.0),child: titleLogo),
+                new Text(' Leader - Innovator - Entrepreneur',
+                  style: TextStyle(
+                    color: Color(0xff6b6767)
+                    )
+                  ,),
+              ],
+            ),
+          ),
+          //body: TheGridView().build(context),
+          
+          body: new Column(
+
+            children: <Widget>[
+              new Expanded(
+                flex: 5,
+                child: new Container(
+                  color: Color(0xfff8f8f8),
+                  child: testBGCarousel,
+                )
+              ),
+              new Expanded(
+                flex: 5,
+                child: new Container(
+                  color: Color(0xfff8f8f8),
+                  child: TheGridView().build(context),
+                  )
+                )
+              ],
+
+              ),
+    )
     );
   }
 }
@@ -37,7 +86,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 class TheGridView {
   GestureDetector makeGridCell(String name, IconData icon, Color cardcolor, BuildContext context) {
     var modifyIcon = new Icon(icon,
-      size: 75.0,
+      size: 50.0,
       textDirection: TextDirection.ltr,
       color: Colors.white,);
 
@@ -47,6 +96,7 @@ class TheGridView {
             fontStyle: FontStyle.normal,
             color: Colors.white)
     );
+
     var optionCard = new Card(
       elevation: 5.0,
       color: cardcolor,
@@ -109,22 +159,24 @@ class TheGridView {
   }
 
   GridView build(BuildContext context) {
-    return GridView.count(
+    var grid = GridView.count(
         primary: true,
-        padding: EdgeInsets.all(100.0),
-        crossAxisCount: 2,
+        padding: EdgeInsets.symmetric(vertical: 10.0),
+        crossAxisCount: 3,
         childAspectRatio: 1.0,
-        mainAxisSpacing: 100.0,
-        crossAxisSpacing: 100.0,
+        mainAxisSpacing: 3.0,
+        crossAxisSpacing: 3.0,
         children: <Widget>[
-          makeGridCell("About us", Icons.ac_unit, Colors.green, context),
-          makeGridCell("Gallery", Icons.image, Colors.blue, context),
-          makeGridCell("Blog", Icons.chat_bubble, Colors.red, context),
-          makeGridCell("Social media", Icons.chat, Colors.blueGrey, context),
-          makeGridCell("Login", Icons.people, Colors.amber, context),
+          makeGridCell("About us", Icons.home, Colors.green, context),
+          makeGridCell("Gallery", Icons.image, Colors.pinkAccent, context),
+          makeGridCell("Blog", Icons.chat, Colors.red, context),
+          makeGridCell("Social media", Icons.ac_unit, Colors.blueGrey, context),
+          makeGridCell("Login", Icons.people, Colors.blue, context),
           makeGridCell("Help", Icons.help, Colors.orange, context),
 
         ]);
+
+     return grid;
   }
 
 }

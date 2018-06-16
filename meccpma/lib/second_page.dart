@@ -15,7 +15,8 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     var titleLogo = new Image(
-        image: new AssetImage('assets/mec_side.jpg'));
+        image: new AssetImage('assets/mec_side.jpg'),
+        width: 800.0,);
     var layout = new Column(
       children: <Widget>[
         titleLogo,
