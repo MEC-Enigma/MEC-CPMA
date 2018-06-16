@@ -6,19 +6,19 @@ class Social extends StatefulWidget {
   static const String routeName = "/Social";
   @override
   _SocialState createState() => new _SocialState();
-
 }
 
 class _SocialState extends State<Social> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: _buildBody(),);
+      body: _buildBody(),
+    );
   }
 
   Widget _buildBody() {
-    var text = new Text("Social",
+    var text = new Text(
+      "Social",
       style: new TextStyle(
           fontSize: 25.0,
           fontStyle: FontStyle.normal,
@@ -29,12 +29,9 @@ class _SocialState extends State<Social> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
-      children: <Widget>[
-        text
-      ],
+      children: <Widget>[text],
     );
 
     return new Center(child: column);
-
   }
 }

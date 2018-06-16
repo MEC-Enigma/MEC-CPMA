@@ -6,19 +6,19 @@ class Gallery extends StatefulWidget {
   static const String routeName = "/Gallery";
   @override
   _GalleryState createState() => new _GalleryState();
-
 }
 
 class _GalleryState extends State<Gallery> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: _buildBody(),);
+      body: _buildBody(),
+    );
   }
 
   Widget _buildBody() {
-    var text = new Text("Gallery",
+    var text = new Text(
+      "Gallery",
       style: new TextStyle(
           fontSize: 25.0,
           fontStyle: FontStyle.normal,
@@ -29,12 +29,9 @@ class _GalleryState extends State<Gallery> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
-      children: <Widget>[
-        text
-      ],
+      children: <Widget>[text],
     );
 
     return new Center(child: column);
-
   }
 }

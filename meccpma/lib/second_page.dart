@@ -7,16 +7,15 @@ class SecondPage extends StatefulWidget {
 
   @override
   _SecondPageState createState() => new _SecondPageState();
-
 }
 
 class _SecondPageState extends State<SecondPage> {
-
   @override
   Widget build(BuildContext context) {
     var titleLogo = new Image(
-        image: new AssetImage('assets/mec_side.jpg'),
-        width: 800.0,);
+      image: new AssetImage('assets/mec_side.jpg'),
+      width: 800.0,
+    );
     var layout = new Column(
       children: <Widget>[
         titleLogo,
@@ -25,11 +24,10 @@ class _SecondPageState extends State<SecondPage> {
 
     Widget logoSection = new Container(
         padding: const EdgeInsets.all(10.0),
-        decoration: new BoxDecoration(
-            color: Color(0xfff8f8f8)),
+        decoration: new BoxDecoration(color: Color(0xfff8f8f8)),
         child: layout);
 
-    Column buildIconColumn(IconData icon, String label){
+    Column buildIconColumn(IconData icon, String label) {
       Color color = Theme.of(context).primaryColor;
 
       return new Column(
@@ -62,5 +60,4 @@ class _SecondPageState extends State<SecondPage> {
       ),
     );
   }
-
 }
