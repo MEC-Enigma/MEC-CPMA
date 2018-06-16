@@ -46,7 +46,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
     return MaterialApp(
       home: Scaffold(
           primary: true,
-
+/**
           appBar: AppBar(
             elevation: 4.0,
             backgroundColor: appbarColor,
@@ -64,6 +64,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
           ),
           //body: TheGridView().build(context),
           
+ */
           body: new Column(
 
             children: <Widget>[

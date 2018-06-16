@@ -5,10 +5,12 @@ import 'mec_page.dart';
 import 'dart:ui';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+    statusBarIconBrightness: Brightness.dark
+  ));
   runApp(new MyApp());
-  Color color = Color(0xffba000d);
+  Color color = Colors.transparent;
   changeStatusColor(color);
-
 }
 
 changeStatusColor(Color color) async {
