@@ -7,6 +7,7 @@ import 'social.dart';
 import 'help.dart';
 
 import 'second_page.dart';
+import 'student_home.dart';
 import 'package:carousel/carousel.dart';
 
 var appbarColor = Color(0xfff44336);
@@ -151,7 +152,7 @@ class TheGridView {
     }
     else if(name == 'Help') {
       redirect = GestureDetector(
-        onTap: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Help()));},
+        onTap: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new StudentHome()));},
         child: optionCard,
       );
     }

@@ -18,7 +18,7 @@ class _MECPageState extends State<MECPage> {
   }
 
   Widget _buildBody() {
-    var mecLogo = new Image(image: new AssetImage('assets/mec.png'), width: 200.0);
+    var mecLogo = new Image(image: new AssetImage('assets/mec.png'), width: 150.0);
     var mahindraText = new Text("Mahindra",
       style: new TextStyle(
           fontSize: 25.0,

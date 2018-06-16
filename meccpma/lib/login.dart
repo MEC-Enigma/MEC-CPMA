@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'student_home.dart';
 
 class Login extends StatefulWidget {
   Login({Key key}) : super(key: key);
@@ -30,6 +31,15 @@ class _LoginState extends State<Login> {
           fontFamily: 'Times New Roman'),
     );
 
+    var navButton = new IconButton(
+        icon: new Icon(Icons.arrow_forward),
+        onPressed: () {
+          Navigator.push(
+              context,
+              new MaterialPageRoute(builder: (context) => new StudentHome())
+          );
+        });
+
     var column = new Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -37,6 +47,7 @@ class _LoginState extends State<Login> {
       children: <Widget>[
         outlookLogo,
         text,
+        navButton
       ],
     );
 
