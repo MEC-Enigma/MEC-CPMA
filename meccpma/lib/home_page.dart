@@ -18,16 +18,22 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new ListView(
-        children: [
-          topImage(),
-          motto(),
-          firstRow(),
-          secondRow(),
-        ],
-      )
-    );
-  }
+      body: new Container(
+        alignment: Alignment.center,
+        padding: new EdgeInsets.fromLTRB(8.0, 10.0, 8.0, 10.0),
+        child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              topImage(),
+              motto(),
+              firstRow(),
+              secondRow(),
+            ],
+          )
+        )
+      );
+    }
 
   Widget motto() {
     var leader = new Text("LEADER",
@@ -138,7 +144,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 
     var row = new Container(
       alignment: Alignment.center,
-      padding: new EdgeInsets.fromLTRB(36.0, 20.0, 36.0, 200.0) ,
+      padding: new EdgeInsets.fromLTRB(36.0, 20.0, 36.0, 100.0) ,
        child: new Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
