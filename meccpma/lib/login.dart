@@ -19,9 +19,10 @@ class _LoginState extends State<Login>  with SingleTickerProviderStateMixin {
         padding: new EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 18.0),
         child: new Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
           children: [
             options(),
+            login()
           ],
         )
       )
@@ -45,7 +46,7 @@ class _LoginState extends State<Login>  with SingleTickerProviderStateMixin {
     );
 
     var share = new IconButton(
-      icon: new Icon(Icons.share),
+      icon: new Icon(Icons.account_circle),
       onPressed: () {},
     );
 
@@ -53,13 +54,6 @@ class _LoginState extends State<Login>  with SingleTickerProviderStateMixin {
       alignment: Alignment.topCenter,
       padding: new EdgeInsets.only(top: 0.0),
       height: 80.0,
-      decoration: new BoxDecoration(
-          color: Colors.white,
-          boxShadow: [new BoxShadow(
-            color: Colors.grey,
-            blurRadius: 10.0,
-          ),],
-      ),
       child: new Container(
         alignment: Alignment.topCenter,
         padding: new EdgeInsets.only(top: 25.0),
@@ -74,6 +68,43 @@ class _LoginState extends State<Login>  with SingleTickerProviderStateMixin {
           )
       )
     );
+    return column;
+  }
+
+  Widget login() {
+    var outlookLogo = new Image(image: new AssetImage('assets/outlook.png'), width: 300.0);
+
+    var username = new TextField(
+       textAlign: TextAlign.center,
+      decoration: new InputDecoration(
+        border: InputBorder.none,
+        hintText: 'Username',
+      ),
+    );
+
+    var password = new TextField(
+        textAlign: TextAlign.center,
+      decoration: new InputDecoration(
+        border: InputBorder.none,
+        hintText: 'Password',
+      ),
+    );
+
+    var column = new Container(
+      padding: new EdgeInsets.only(top: 100.0),
+      child: new Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          outlookLogo,
+          username,
+          password,
+          //button,
+          //forgot
+        ],
+      )
+    );
+
     return column;
   }
 }
