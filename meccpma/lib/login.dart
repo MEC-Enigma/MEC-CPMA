@@ -9,43 +9,102 @@ class Login extends StatefulWidget {
   _LoginState createState() => new _LoginState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginState extends State<Login>  with SingleTickerProviderStateMixin {
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: new Text('Login'),
-      ),
-      body: _buildBody(),
+      body: new Container(
+        alignment: Alignment.center,
+        padding: new EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 18.0),
+        child: new Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            options(),
+            login()
+          ],
+        )
+      )
     );
   }
 
-  Widget _buildBody() {
-    var outlookLogo =
-        new Image(image: new AssetImage('assets/outlook.png'), width: 100.0);
-    var text = new Text(
-      "Login page",
+  Widget options() {
+
+    var header = new Text("Login",
       style: new TextStyle(
-          fontSize: 25.0,
+          fontSize: 30.0,
+          fontWeight: FontWeight.bold,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Times New Roman'),
+          fontFamily: 'Roboto Bold',
+          color: Colors.red,
+          ),
     );
 
-    var navButton = new IconButton(
-        icon: new Icon(Icons.arrow_forward),
-        onPressed: () {
-          Navigator.push(context,
-              new MaterialPageRoute(builder: (context) => new StudentHome()));
-        });
-
-    var column = new Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
-      children: <Widget>[outlookLogo, text, navButton],
+    var back = new BackButton(
+      color: Colors.black,
     );
 
-    return new Center(child: column);
+    var share = new IconButton(
+      icon: new Icon(Icons.account_circle),
+      onPressed: () {},
+    );
+
+    var column = new Container(
+      alignment: Alignment.topCenter,
+      padding: new EdgeInsets.only(top: 0.0),
+      height: 80.0,
+      child: new Container(
+        alignment: Alignment.topCenter,
+        padding: new EdgeInsets.only(top: 25.0),
+          child: new Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              back,
+              header,
+              share
+            ],
+          )
+      )
+    );
+    return column;
+  }
+
+  Widget login() {
+    var outlookLogo = new Image(image: new AssetImage('assets/outlook.png'), width: 300.0);
+
+    var username = new TextField(
+       textAlign: TextAlign.center,
+      decoration: new InputDecoration(
+        border: InputBorder.none,
+        hintText: 'Username',
+      ),
+    );
+
+    var password = new TextField(
+        textAlign: TextAlign.center,
+      decoration: new InputDecoration(
+        border: InputBorder.none,
+        hintText: 'Password',
+      ),
+    );
+
+    var column = new Container(
+      padding: new EdgeInsets.only(top: 100.0),
+      child: new Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          outlookLogo,
+          username,
+          password,
+          //button,
+          //forgot
+        ],
+      )
+    );
+
+    return column;
   }
 }
