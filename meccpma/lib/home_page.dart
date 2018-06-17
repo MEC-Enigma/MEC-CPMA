@@ -20,10 +20,10 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
     return new Scaffold(
       body: new Container(
         alignment: Alignment.center,
-        padding: new EdgeInsets.fromLTRB(8.0, 10.0, 8.0, 10.0),
+        padding: new EdgeInsets.only(left: 8.0, top: 10.0, right: 8.0),
         child: new Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               topImage(),
               motto(),
@@ -60,7 +60,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 
     var column = new Container(
       alignment: Alignment.topLeft,
-      padding: new EdgeInsets.fromLTRB(34.0, 80.0, 34.0, 150.0) ,
+      padding: new EdgeInsets.only(left: 34.0, top: 50.0, right: 34.0) ,
        child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -111,7 +111,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 
     var row = new Container(
       alignment: Alignment.center,
-      padding: new EdgeInsets.fromLTRB(36.0, 20.0, 36.0, 100.0) ,
+      padding: new EdgeInsets.only(left: 36.0, top: 50.0, right: 36.0) ,
        child: new Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -144,7 +144,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 
     var row = new Container(
       alignment: Alignment.center,
-      padding: new EdgeInsets.fromLTRB(36.0, 20.0, 36.0, 100.0) ,
+      padding: new EdgeInsets.only(left: 36.0, top: 10.0, right: 36.0, bottom: 50.0) ,
        child: new Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
