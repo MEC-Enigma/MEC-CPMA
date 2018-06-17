@@ -4,40 +4,35 @@ class Blog extends StatefulWidget {
   Blog({Key key}) : super(key: key);
 
   static const String routeName = "/Blog";
+
   @override
   _BlogState createState() => new _BlogState();
 }
 
-class _BlogState extends State<Blog>  with SingleTickerProviderStateMixin {
-
+class _BlogState extends State<Blog> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Container(
-        alignment: Alignment.center,
-        padding: new EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0),
-        child: new Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            options(),
-            cardList()
-          ],
-        )
-      )
-    );
+        body: new Container(
+            alignment: Alignment.center,
+            padding: new EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0),
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [options(), cardList()],
+            )));
   }
 
   Widget options() {
-
-    var header = new Text("Blog",
+    var header = new Text(
+      "Blog",
       style: new TextStyle(
-          fontSize: 30.0,
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.normal,
-          fontFamily: 'Roboto Bold',
-          color: Colors.red,
-          ),
+        fontSize: 30.0,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.normal,
+        fontFamily: 'Roboto Bold',
+        color: Colors.red,
+      ),
     );
 
     var back = new BackButton(
@@ -50,35 +45,30 @@ class _BlogState extends State<Blog>  with SingleTickerProviderStateMixin {
     );
 
     var column = new Container(
-      alignment: Alignment.topCenter,
-      padding: new EdgeInsets.only(top: 0.0),
-      height: 80.0,
-      decoration: new BoxDecoration(
-          color: Colors.white,
-          boxShadow: [new BoxShadow(
-            color: Colors.grey,
-            blurRadius: 10.0,
-          ),],
-      ),
-      child: new Container(
         alignment: Alignment.topCenter,
-        padding: new EdgeInsets.only(top: 25.0),
-          child: new Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              back,
-              header,
-              share
-            ],
-          )
-      )
-    );
+        padding: new EdgeInsets.only(top: 0.0),
+        height: 80.0,
+        decoration: new BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            new BoxShadow(
+              color: Colors.grey,
+              blurRadius: 10.0,
+            ),
+          ],
+        ),
+        child: new Container(
+            alignment: Alignment.topCenter,
+            padding: new EdgeInsets.only(top: 25.0),
+            child: new Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[back, header, share],
+            )));
     return column;
   }
 
   Widget card(location, mainTitle, subTitle, content) {
-
     var cardImage = new Image(
       image: new AssetImage(location),
       width: 600.0,
@@ -138,50 +128,61 @@ class _BlogState extends State<Blog>  with SingleTickerProviderStateMixin {
     );
 
     var card = new Container(
-      alignment: Alignment.center,
-      padding: new EdgeInsets.only(left: 15.0, top: 15.0, right: 15.0, bottom: 15.0),
-      child: new Container(
-      alignment: Alignment.center,
-      padding: new EdgeInsets.only(left: 15.0, top: 15.0, right: 15.0, bottom: 15.0),
-      decoration: new BoxDecoration(
-          color: Colors.white,
-          boxShadow: [new BoxShadow(
-            color: Colors.grey,
-            blurRadius: 10.0,
-          ),],
-      ),
-      child: new Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            cardImage,
-            cardTitle,
-            cardDis
-          ],
-      )
-      )
-    );
+        alignment: Alignment.center,
+        padding: new EdgeInsets.only(
+            left: 15.0, top: 15.0, right: 15.0, bottom: 15.0),
+        child: new Container(
+            alignment: Alignment.center,
+            padding: new EdgeInsets.only(
+                left: 15.0, top: 15.0, right: 15.0, bottom: 15.0),
+            decoration: new BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                new BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 10.0,
+                ),
+              ],
+            ),
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [cardImage, cardTitle, cardDis],
+            )));
     return card;
   }
 
   Widget cardList() {
-
     var cardListView = new Container(
-      constraints: new BoxConstraints.expand(
-        height: 820.0,
-      ),
-      alignment: Alignment.topCenter,
-      child: ListView(
-        padding: new EdgeInsets.only(left: 16.0, top: 16.0, right: 16.0, bottom: 16.0),
-        children: <Widget>[
-          card('assets/tedx.jpg', 'TedX Mahindra Ecole Centrale', 'March, Convention Center', '''Mahindra École Centrale welcomes you to be a part of the enthralling experience that is TEDxMahindraÉcoleCentrale. We're back with our second edition, and this time.. We’re better. TEDxMahindraÉcoleCentrale seeks to propagate thought-provoking ideas that have taken seed in the minds of reputed figures in fields ranging from Education to Cryptocurrency, and Philosophy to literally, Rocket Science. We cordially invite you to share this experience with us, and take one step closer to Ideas Worth Spreading.'''),
-          card('assets/mec1.jpg', 'MEC students with President Macron of France', 'March, New Delhi', '''The President of France Emmanuel Macron, who is currently visiting India, invited and met several young people in Delhi today, including two MEC students. Mr. T. M. Pavan (3rd year ME) and Ms. Gitanjali Raghu (2nd year EEE) had the great opportunity of talking to the French President about MEC and its special curriculum!'''),
-          card('assets/mec2.jpg', 'Centrale Connect Conclave', 'March, Convention Center', '''The Centrale Connect Conclave at MEC on 10th March 2018, is an industry-academia event with the theme ”Towards Infinite Possibilities”, and features the following list of eminent guests and panelists.'''),
-          card('assets/mec3', 'AIRO – The MEC Sports Fest', 'March, MEC Campus', '''Bonjour! Mahindra École Centrale is hosting a three day sports extravaganza – the perfect platform for sports enthusiasts to showcase their skills and talents. Be there!''')
-        ]
-      )
-    );
+        constraints: new BoxConstraints.expand(
+          height: 820.0,
+        ),
+        alignment: Alignment.topCenter,
+        child: ListView(
+            padding: new EdgeInsets.only(
+                left: 16.0, top: 16.0, right: 16.0, bottom: 16.0),
+            children: <Widget>[
+              card(
+                  'assets/tedx.jpg',
+                  'TedX Mahindra Ecole Centrale',
+                  'March, Convention Center',
+                  '''Mahindra École Centrale welcomes you to be a part of the enthralling experience that is TEDxMahindraÉcoleCentrale. We're back with our second edition, and this time.. We’re better. TEDxMahindraÉcoleCentrale seeks to propagate thought-provoking ideas that have taken seed in the minds of reputed figures in fields ranging from Education to Cryptocurrency, and Philosophy to literally, Rocket Science. We cordially invite you to share this experience with us, and take one step closer to Ideas Worth Spreading.'''),
+              card(
+                  'assets/mec1.jpg',
+                  'MEC students with President Macron of France',
+                  'March, New Delhi',
+                  '''The President of France Emmanuel Macron, who is currently visiting India, invited and met several young people in Delhi today, including two MEC students. Mr. T. M. Pavan (3rd year ME) and Ms. Gitanjali Raghu (2nd year EEE) had the great opportunity of talking to the French President about MEC and its special curriculum!'''),
+              card(
+                  'assets/mec2.jpg',
+                  'Centrale Connect Conclave',
+                  'March, Convention Center',
+                  '''The Centrale Connect Conclave at MEC on 10th March 2018, is an industry-academia event with the theme ”Towards Infinite Possibilities”, and features the following list of eminent guests and panelists.'''),
+              card(
+                  'assets/mec3',
+                  'AIRO – The MEC Sports Fest',
+                  'March, MEC Campus',
+                  '''Bonjour! Mahindra École Centrale is hosting a three day sports extravaganza – the perfect platform for sports enthusiasts to showcase their skills and talents. Be there!''')
+            ]));
     return cardListView;
   }
-
 }

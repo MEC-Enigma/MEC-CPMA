@@ -52,8 +52,14 @@ class _StudentHomeState extends State<StudentHome> {
       );
     }
 
-    var rowIcons1 = [Icons.call, Icons.near_me, Icons.share];
-    var rowText1 = ['Call', 'Route', 'Share'];
+    var rowIcons1 = [Icons.assistant, Icons.home, Icons.chat];
+    var rowIcons2 = [Icons.image, Icons.help, Icons.near_me];
+    var rowIcons3 = [Icons.book, Icons.local_library, Icons.local_post_office];
+
+    var rowText1 = ['Events', 'Home', 'Share'];
+    var rowText2 = ['Gallery', 'Help', 'Route'];
+    var rowText3 = ['Moodle', 'Library', 'Email'];
+
 
     var buttonSection = new Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -63,11 +69,11 @@ class _StudentHomeState extends State<StudentHome> {
           padding: EdgeInsets.only(top: 50.0),
         ),
         Container(
-          child: makeRow(rowIcons1, rowText1),
+          child: makeRow(rowIcons2, rowText2),
           padding: EdgeInsets.only(top: 30.0),
         ),
         Container(
-          child: makeRow(rowIcons1, rowText1),
+          child: makeRow(rowIcons3, rowText3),
           padding: EdgeInsets.only(top: 30.0),
         )
       ],

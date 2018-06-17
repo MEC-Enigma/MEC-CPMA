@@ -5,6 +5,12 @@ import 'mec_page.dart';
 import 'dart:ui';
 
 void main() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark
       .copyWith(statusBarIconBrightness: Brightness.dark));
   runApp(new MyApp());
