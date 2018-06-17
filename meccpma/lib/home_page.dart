@@ -54,7 +54,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 
     var column = new Container(
       alignment: Alignment.topLeft,
-      padding: new EdgeInsets.fromLTRB(34.0, 40.0, 34.0, 150.0) ,
+      padding: new EdgeInsets.fromLTRB(34.0, 80.0, 34.0, 150.0) ,
        child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -88,31 +88,19 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 
   Widget firstRow() {
 
-    var login = new FloatingActionButton(
+    var login = new FlatButton(
       onPressed: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Login()));},
-      heroTag: null,
-      child: new ConstrainedBox(
-            constraints: new BoxConstraints.expand(),
-            child: new Icon(Icons.people),
-          ),
+      child: new Icon(Icons.people, size: 50.0,),
     );
 
-    var about = new FloatingActionButton(
+    var about = new FlatButton(
       onPressed: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new About()));},
-      heroTag: null,
-      child: new ConstrainedBox(
-            constraints: new BoxConstraints.expand(),
-            child: new Icon(Icons.home),
-          ),
+      child: new Icon(Icons.home, size: 50.0,),
     );
 
-    var blog = new FloatingActionButton(
+    var blog = new FlatButton(
       onPressed: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Blog()));},
-      heroTag: null,
-      child: new ConstrainedBox(
-            constraints: new BoxConstraints.expand(),
-            child: new Icon(Icons.chat),
-          ),
+      child: new Icon(Icons.chat, size: 50.0,),
     );
 
     var row = new Container(
@@ -133,31 +121,19 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 
   Widget secondRow() {
 
-    var gallery = new FloatingActionButton(
-      onPressed: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Gallery()));},
-      heroTag: null,
-      child: new ConstrainedBox(
-            constraints: new BoxConstraints.expand(),
-            child: new Icon(Icons.image),
-          ),
+    var gallery = new FlatButton(
+          onPressed: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Gallery()));},
+          child: new Icon(Icons.image, size: 50.0,),
     );
 
-    var help = new FloatingActionButton(
+    var help = new FlatButton(
       onPressed: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Help()));},
-      heroTag: null,
-      child: new ConstrainedBox(
-            constraints: new BoxConstraints.expand(),
-            child: new Icon(Icons.help),
-          ),
+      child: new Icon(Icons.help, size: 50.0,),
     );
 
-    var social = new FloatingActionButton(
+    var social = new FlatButton(
       onPressed: () {Navigator.push(context,new MaterialPageRoute(builder: (context) => new Social()));},
-      heroTag: null,
-      child: new ConstrainedBox(
-            constraints: new BoxConstraints.expand(),
-            child: new Icon(Icons.people),
-          ),
+      child: new Icon(Icons.people, size: 50.0,),
     );
 
     var row = new Container(
