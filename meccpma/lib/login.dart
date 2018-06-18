@@ -18,16 +18,13 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomPadding: true,
         body: new Container(
             alignment: Alignment.center,
-            padding: new EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 18.0),
-            child: new Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
+            child: new ListView(
               children: [
                 options(),
-                login()                ]
+                login() ]
             )
          ));
   }
@@ -55,11 +52,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
 
     var column = new Container(
         alignment: Alignment.topCenter,
-        padding: new EdgeInsets.only(top: 0.0),
-        height: 80.0,
         child: new Container(
             alignment: Alignment.topCenter,
-            padding: new EdgeInsets.only(top: 25.0),
             child: new Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,13 +69,13 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     final emailController = new TextEditingController();
     final passwordController = new TextEditingController();
 
-    var username = new TextField(
+    var email = new TextField(
       controller: emailController,
       textAlign: TextAlign.start,
 
       decoration: new InputDecoration(
         border: InputBorder.none,
-        labelText: 'Username',
+        labelText: 'Email',
       ),
     );
 
@@ -96,17 +90,20 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
       ),
     );
 
-    var _username;
+    var _email;
     var _password;
 
     var signinButton = new FlatButton(
+        color: Colors.blue,
         onPressed: () {
           {
             Navigator.push(context,
                 new MaterialPageRoute(builder: (context) => new StudentHome()));
           }
         },
-        child: new Text('Sign in'));
+        child: new Text('Sign in',
+        style: TextStyle(color: Colors.white,
+                        fontSize: 15.0),));
 
     var column = new Container(
         padding: new EdgeInsets.only(top: 50.0),
@@ -114,27 +111,27 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            outlookLogo,
             Container(
-              padding: EdgeInsets.only(top: 10.0),
-              width: 250.0,
-              child: username,
+              padding: EdgeInsets.only(bottom: 5.0),
+              child: outlookLogo,
+            )
+            ,
+            Container(
+              width: 275.0,
+              child: email,
             ),
             Container(
-              padding: EdgeInsets.only(top: 5.0),
-              width: 250.0,
+              width: 275.0,
               child: password,
             ),
-            signinButton
-
+            Container(
+              padding: EdgeInsets.only(top: 15.0),
+              child: signinButton,
+            )
             //button,
             //forgot
           ],
         ));
-
-
-
-
     return column;
   }
 }
