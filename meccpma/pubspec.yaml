@@ -40,7 +40,7 @@ flutter:
     - assets/mec1.jpg
     - assets/mec2.jpg
     - assets/mec3.jpg
-
+    - assets/pupp.jpg
 
   fonts:
     - family: Times New Roman
