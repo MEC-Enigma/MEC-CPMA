@@ -40,41 +40,63 @@ class _StudentHomeState extends State<StudentHome> {
       );
     }
 
-    Row makeRow(List icons, List text) {
+    Row makeRow(List rowItems) {
+      List buttonsList = new List<Widget>();
+
+      for(var ri in rowItems) {
+        var button = new GestureDetector(
+          onTap: () {Navigator.pushNamed(context, ri[2]);},
+          child: buildIconColumn(ri[0], ri[1]),
+        );
+        buttonsList.add(button);
+      }
+
       return new Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          buildIconColumn(icons[0], text[0]),
-          buildIconColumn(icons[1], text[1]),
-          buildIconColumn(icons[2], text[2]),
-        ],
+        children: buttonsList,
       );
     }
 
-    var rowIcons1 = [Icons.assistant, Icons.home, Icons.chat];
-    var rowIcons2 = [Icons.image, Icons.help, Icons.near_me];
-    var rowIcons3 = [Icons.book, Icons.local_library, Icons.local_post_office];
+    List row1 = [
+      [Icons.email, 'Inbox', '/inbox'],
+      [Icons.supervised_user_circle, 'Clubs', '/clubs'],
+      [Icons.people, 'Social', '/social']];
 
-    var rowText1 = ['Events', 'Home', 'Share'];
-    var rowText2 = ['Gallery', 'Help', 'Route'];
-    var rowText3 = ['Moodle', 'Library', 'Email'];
+    List row2 = [
+      [Icons.event, 'Events', '/events'],
+      [Icons.assignment_turned_in, 'Results', '/results'],
+      [Icons.local_library, 'Library', '/library']];
 
+    List row3 = [
+      [Icons.book, 'Moodle', '/Moodle'],
+      [Icons.date_range, 'T.table', '/timetable'],
+      [Icons.fastfood, 'Food', '/food'],
+      ];
+
+    List row4 = [
+       [Icons.image, 'Gallery', '/gallery'],
+      [Icons.warning, 'Feedback', '/feedback'],
+      [Icons.help, 'Help', '/help']];
 
     var buttonSection = new Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Container(
-          child: makeRow(rowIcons1, rowText1),
+          child: makeRow(row1),
           padding: EdgeInsets.only(top: 50.0),
         ),
         Container(
-          child: makeRow(rowIcons2, rowText2),
+          child: makeRow(row2),
           padding: EdgeInsets.only(top: 30.0),
         ),
         Container(
-          child: makeRow(rowIcons3, rowText3),
+          child: makeRow(row3),
+          padding: EdgeInsets.only(top: 30.0),
+        ),
+        Container(
+          child: makeRow(row4),
           padding: EdgeInsets.only(top: 30.0),
         )
       ],
