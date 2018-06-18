@@ -41,6 +41,10 @@ flutter:
     - assets/mec2.jpg
     - assets/mec3.jpg
     - assets/pupp.jpg
+    - assets/Top-10-Moments-of-2015.png
+    - assets/31-March-1.1-min.jpg
+    - assets/Civil-Engineering-min.jpg
+    - assets/MEC_Blog_Header1.jpg
 
   fonts:
     - family: Times New Roman
