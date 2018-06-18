@@ -85,38 +85,17 @@ class HomePageState extends State<HomePage>
   }
 
   Widget firstRow() {
-    var login = new FlatButton(
-      onPressed: () {
-        Navigator.push(
-            context, new MaterialPageRoute(builder: (context) => new Login()));
-      },
-      child: new Icon(
-        Icons.people,
-        size: 50.0,
-      ),
-    );
 
-    var about = new FlatButton(
-      onPressed: () {
-        Navigator.push(
-            context, new MaterialPageRoute(builder: (context) => new About()));
-      },
-      child: new Icon(
-        Icons.home,
-        size: 50.0,
-      ),
-    );
+    List firstrowIcons = [[Icons.person, '/login'], [Icons.home, '/about'], [Icons.chat, '/blog']];
+    List iconButtons = new List<Widget>();
 
-    var blog = new FlatButton(
-      onPressed: () {
-        Navigator.push(
-            context, new MaterialPageRoute(builder: (context) => new Blog()));
-      },
-      child: new Icon(
-        Icons.chat,
-        size: 50.0,
-      ),
-    );
+    for(var i in firstrowIcons) {
+      var button = new FlatButton(
+          child: new Icon(i[0], size: 50.0,),
+          onPressed: () {Navigator.pushNamed(context, i[1]);},
+      );
+      iconButtons.add(button);
+    }
 
     var row = new Container(
         alignment: Alignment.center,
@@ -124,44 +103,23 @@ class HomePageState extends State<HomePage>
         child: new Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[login, about, blog],
+          children: iconButtons,
         ));
     return row;
   }
 
   Widget secondRow() {
-    var gallery = new FlatButton(
-      onPressed: () {
-        Navigator.push(context,
-            new MaterialPageRoute(builder: (context) => new Gallery()));
-      },
-      child: new Icon(
-        Icons.image,
-        size: 50.0,
-      ),
-    );
 
-    var help = new FlatButton(
-      onPressed: () {
-        Navigator.push(
-            context, new MaterialPageRoute(builder: (context) => new Help()));
-      },
-      child: new Icon(
-        Icons.help,
-        size: 50.0,
-      ),
-    );
+    List secondrowIcons = [[Icons.image, '/gallery'], [Icons.help, '/help'], [Icons.people, '/social']];
+    List iconButtons = new List<Widget>();
 
-    var social = new FlatButton(
-      onPressed: () {
-        Navigator.push(
-            context, new MaterialPageRoute(builder: (context) => new Social()));
-      },
-      child: new Icon(
-        Icons.people,
-        size: 50.0,
-      ),
-    );
+    for(var i in secondrowIcons) {
+      var button = new FlatButton(
+        child: new Icon(i[0], size: 50.0,),
+        onPressed: () {Navigator.pushNamed(context, i[1]);},
+      );
+      iconButtons.add(button);
+    }
 
     var row = new Container(
         alignment: Alignment.center,
@@ -170,7 +128,7 @@ class HomePageState extends State<HomePage>
         child: new Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[gallery, help, social],
+          children: iconButtons,
         ));
     return row;
   }

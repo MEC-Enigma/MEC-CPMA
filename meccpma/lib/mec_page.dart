@@ -37,8 +37,7 @@ class _MECPageState extends State<MECPage> {
     var navButton = new IconButton(
         icon: new Icon(Icons.arrow_forward),
         onPressed: () {
-          Navigator.push(context,
-              new MaterialPageRoute(builder: (context) => new HomePage()));
+          Navigator.pushNamed(context, '/homepage');
         });
 
     var column = new Column(

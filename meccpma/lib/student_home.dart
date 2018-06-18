@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'second_page.dart';
 
 class StudentHome extends StatefulWidget {
   StudentHome({Key key}) : super(key: key);
-
-  static const String routeName = "/StudentHome";
 
   @override
   _StudentHomeState createState() => new _StudentHomeState();
 }
 
 class _StudentHomeState extends State<StudentHome> {
+
   @override
   Widget build(BuildContext context) {
+
     Column buildIconColumn(IconData icon, String label) {
       Color color = Colors.black;
 
@@ -90,6 +91,7 @@ class _StudentHomeState extends State<StudentHome> {
     var titleLogo = new Image(image: new AssetImage('assets/mec_side.jpg'));
 
     return new MaterialApp(
+
       home: new Scaffold(
           backgroundColor: Color(0xfff8f8f8),
           body: new ListView(
