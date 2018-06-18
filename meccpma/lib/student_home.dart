@@ -9,10 +9,8 @@ class StudentHome extends StatefulWidget {
 }
 
 class _StudentHomeState extends State<StudentHome> {
-
   @override
   Widget build(BuildContext context) {
-
     Column buildIconColumn(IconData icon, String label) {
       Color color = Colors.black;
 
@@ -43,9 +41,11 @@ class _StudentHomeState extends State<StudentHome> {
     Row makeRow(List rowItems) {
       List buttonsList = new List<Widget>();
 
-      for(var ri in rowItems) {
+      for (var ri in rowItems) {
         var button = new GestureDetector(
-          onTap: () {Navigator.pushNamed(context, ri[2]);},
+          onTap: () {
+            Navigator.pushNamed(context, ri[2]);
+          },
           child: buildIconColumn(ri[0], ri[1]),
         );
         buttonsList.add(button);
@@ -62,23 +62,26 @@ class _StudentHomeState extends State<StudentHome> {
     List row1 = [
       [Icons.email, 'Inbox', '/inbox'],
       [Icons.supervised_user_circle, 'Clubs', '/clubs'],
-      [Icons.people, 'Social', '/social']];
+      [Icons.people, 'Social', '/social']
+    ];
 
     List row2 = [
       [Icons.event, 'Events', '/events'],
       [Icons.assignment_turned_in, 'Results', '/results'],
-      [Icons.local_library, 'Library', '/library']];
+      [Icons.local_library, 'Library', '/library']
+    ];
 
     List row3 = [
       [Icons.book, 'Moodle', '/Moodle'],
       [Icons.date_range, 'T.table', '/timetable'],
       [Icons.fastfood, 'Food', '/food'],
-      ];
+    ];
 
     List row4 = [
-       [Icons.image, 'Gallery', '/gallery'],
+      [Icons.image, 'Gallery', '/gallery'],
       [Icons.warning, 'Feedback', '/feedback'],
-      [Icons.help, 'Help', '/help']];
+      [Icons.help, 'Help', '/help']
+    ];
 
     var buttonSection = new Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -113,7 +116,6 @@ class _StudentHomeState extends State<StudentHome> {
     var titleLogo = new Image(image: new AssetImage('assets/mec_side.jpg'));
 
     return new MaterialApp(
-
       home: new Scaffold(
           backgroundColor: Color(0xfff8f8f8),
           body: new ListView(

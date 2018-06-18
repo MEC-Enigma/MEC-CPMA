@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
 import 'student_home.dart';
 
-
 class Login extends StatefulWidget {
   Login({Key key}) : super(key: key);
 
   static const String routeName = "/Login";
-
 
   @override
   _LoginState createState() => new _LoginState();
 }
 
 class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
-
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         resizeToAvoidBottomPadding: true,
         body: new Container(
             alignment: Alignment.center,
-            child: new ListView(
-              children: [
-                options(),
-                login() ]
-            )
-         ));
+            child: new ListView(children: [options(), login()])));
   }
 
   Widget options() {
@@ -64,7 +55,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
 
   Widget login() {
     var outlookLogo =
-        new Image(image: new AssetImage('assets/outlook.png'), width: 100.0);
+        new Image(image: new AssetImage('assets/outlook.png'), width: 75.0);
 
     final emailController = new TextEditingController();
     final passwordController = new TextEditingController();
@@ -72,7 +63,6 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     var email = new TextField(
       controller: emailController,
       textAlign: TextAlign.start,
-
       decoration: new InputDecoration(
         border: InputBorder.none,
         labelText: 'Email',
@@ -86,7 +76,6 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
       decoration: new InputDecoration(
         border: InputBorder.none,
         labelText: 'Password',
-
       ),
     );
 
@@ -94,16 +83,21 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     var _password;
 
     var signinButton = new FlatButton(
-        color: Colors.blue,
+        //shape: new RoundedRectangleBorder(
+        // borderRadius: BorderRadius.circular(5.0),
+
+        //),
+        color: Color(0xff0072c6),
         onPressed: () {
           {
             Navigator.push(context,
                 new MaterialPageRoute(builder: (context) => new StudentHome()));
           }
         },
-        child: new Text('Sign in',
-        style: TextStyle(color: Colors.white,
-                        fontSize: 15.0),));
+        child: new Text(
+          'Log in',
+          style: TextStyle(color: Colors.white, fontSize: 15.0),
+        ));
 
     var column = new Container(
         padding: new EdgeInsets.only(top: 50.0),
@@ -112,10 +106,9 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.only(bottom: 5.0),
+              padding: EdgeInsets.only(bottom: 20.0),
               child: outlookLogo,
-            )
-            ,
+            ),
             Container(
               width: 275.0,
               child: email,
@@ -126,6 +119,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
             ),
             Container(
               padding: EdgeInsets.only(top: 15.0),
+              width: 275.0,
               child: signinButton,
             )
             //button,

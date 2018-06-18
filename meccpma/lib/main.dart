@@ -15,13 +15,11 @@ import 'social.dart';
 import 'student_home.dart';
 import 'home_page.dart';
 
-
 void main() {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark
       .copyWith(statusBarIconBrightness: Brightness.dark));

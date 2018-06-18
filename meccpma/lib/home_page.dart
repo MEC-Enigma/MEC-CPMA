@@ -85,14 +85,22 @@ class HomePageState extends State<HomePage>
   }
 
   Widget firstRow() {
-
-    List firstrowIcons = [[Icons.person, '/login'], [Icons.home, '/about'], [Icons.chat, '/blog']];
+    List firstrowIcons = [
+      [Icons.person, '/login'],
+      [Icons.home, '/about'],
+      [Icons.chat, '/blog']
+    ];
     List iconButtons = new List<Widget>();
 
-    for(var i in firstrowIcons) {
+    for (var i in firstrowIcons) {
       var button = new FlatButton(
-          child: new Icon(i[0], size: 50.0,),
-          onPressed: () {Navigator.pushNamed(context, i[1]);},
+        child: new Icon(
+          i[0],
+          size: 50.0,
+        ),
+        onPressed: () {
+          Navigator.pushNamed(context, i[1]);
+        },
       );
       iconButtons.add(button);
     }
@@ -109,14 +117,22 @@ class HomePageState extends State<HomePage>
   }
 
   Widget secondRow() {
-
-    List secondrowIcons = [[Icons.image, '/gallery'], [Icons.help, '/help'], [Icons.people, '/social']];
+    List secondrowIcons = [
+      [Icons.image, '/gallery'],
+      [Icons.help, '/help'],
+      [Icons.people, '/social']
+    ];
     List iconButtons = new List<Widget>();
 
-    for(var i in secondrowIcons) {
+    for (var i in secondrowIcons) {
       var button = new FlatButton(
-        child: new Icon(i[0], size: 50.0,),
-        onPressed: () {Navigator.pushNamed(context, i[1]);},
+        child: new Icon(
+          i[0],
+          size: 50.0,
+        ),
+        onPressed: () {
+          Navigator.pushNamed(context, i[1]);
+        },
       );
       iconButtons.add(button);
     }
