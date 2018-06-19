@@ -15,8 +15,8 @@ import 'home_page.dart';
 void main() {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
   ]);
+
   runApp(new MyApp());
 }
 

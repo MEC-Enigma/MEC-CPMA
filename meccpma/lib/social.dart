@@ -11,9 +11,29 @@ class Social extends StatefulWidget {
 }
 
 class _SocialState extends State<Social> with SingleTickerProviderStateMixin {
+  var header = new Text(
+    "Social media",
+    style: new TextStyle(
+      fontSize: 30.0,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+      fontFamily: 'Roboto',
+      color: Colors.red,
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+        appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.black,),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          title: header,
+          actions: <Widget>[
+            new IconButton(icon: Icon(Icons.share, color: Colors.black,), onPressed: null),
+          ]
+        ),
         body: new Container(
             alignment: Alignment.center,
             padding: new EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 18.0),
@@ -21,57 +41,11 @@ class _SocialState extends State<Social> with SingleTickerProviderStateMixin {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                options(),
                 social('assets/twitter.png', 'https://twitter.com/StudyatMEC'),
                 social('assets/facebook.png', 'http://facebook.com/studyatmec'),
-                social('assets/youtube.png', 'https://in.linkedin.com/company/mahindra-%C3%A9cole-centrale'),
+                social('assets/LinkedIn.png', 'https://in.linkedin.com/company/mahindra-%C3%A9cole-centrale'),
               ],
             )));
-  }
-
-  Widget options() {
-    var header = new Text(
-      "Social",
-      style: new TextStyle(
-        fontSize: 30.0,
-        fontWeight: FontWeight.bold,
-        fontStyle: FontStyle.normal,
-        fontFamily: 'Roboto Bold',
-        color: Colors.red,
-      ),
-    );
-
-    var back = new BackButton(
-      color: Colors.black,
-    );
-
-    var share = new IconButton(
-      icon: new Icon(Icons.share),
-      onPressed: () {},
-    );
-
-    var column = new Container(
-        alignment: Alignment.topCenter,
-        padding: new EdgeInsets.only(top: 0.0),
-        height: 80.0,
-        decoration: new BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            new BoxShadow(
-              color: Colors.grey,
-              blurRadius: 10.0,
-            ),
-          ],
-        ),
-        child: new Container(
-            alignment: Alignment.topCenter,
-            padding: new EdgeInsets.only(top: 25.0),
-            child: new Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[back, header, share],
-            )));
-    return column;
   }
 
   Widget social(path, link) {

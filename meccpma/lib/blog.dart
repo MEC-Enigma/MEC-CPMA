@@ -112,6 +112,7 @@ class _BlogState extends State<Blog> with SingleTickerProviderStateMixin {
 
     return new Scaffold(
         appBar: AppBar(
+          brightness: Brightness.light,
           iconTheme: IconThemeData(color: Colors.black,),
           centerTitle: true,
           backgroundColor: Colors.white,
@@ -212,6 +213,8 @@ class viewBlog extends StatelessWidget {
     // Use the Todo to create our UI
     return new Scaffold(
       appBar: new AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
         //title: new Text("${blog.title}"),
       ),
       body: ListView(

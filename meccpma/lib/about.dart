@@ -9,62 +9,36 @@ class About extends StatefulWidget {
 }
 
 class _AboutState extends State<About> with SingleTickerProviderStateMixin {
+
+  var header = new Text(
+    "About us",
+    style: new TextStyle(
+      fontSize: 30.0,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+      fontFamily: 'Roboto',
+      color: Colors.red,
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body: new Container(
-            alignment: Alignment.center,
-            padding: new EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0),
-            child: new Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [options(), cardList()],
-            )));
-  }
-
-  Widget options() {
-    var header = new Text(
-      "About Us",
-      style: new TextStyle(
-        fontSize: 30.0,
-        fontWeight: FontWeight.bold,
-        fontStyle: FontStyle.normal,
-        fontFamily: 'Roboto',
-        color: Colors.red,
-      ),
-    );
-
-    var back = new BackButton(
-      color: Colors.black,
-    );
-
-    var share = new IconButton(
-      icon: new Icon(Icons.share),
-      onPressed: () {},
-    );
-
-    var column = new Container(
-        alignment: Alignment.topCenter,
-        padding: new EdgeInsets.only(top: 0.0),
-        height: 80.0,
-        decoration: new BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            new BoxShadow(
-              color: Colors.grey,
-              blurRadius: 10.0,
-            ),
+        appBar: AppBar(
+          brightness: Brightness.light,
+          iconTheme: IconThemeData(color: Colors.black,),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          title: header,
+          actions: <Widget>[
+            new IconButton(icon: Icon(Icons.share, color: Colors.black,), onPressed: null)
           ],
         ),
-        child: new Container(
-            alignment: Alignment.topCenter,
-            padding: new EdgeInsets.only(top: 25.0),
-            child: new Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[back, header, share],
-            )));
-    return column;
+
+        body: new Container(
+            alignment: Alignment.center,
+            child: cardList()
+        ));
   }
 
   Widget card(location, mainTitle, subTitle, content) {
@@ -75,7 +49,7 @@ class _AboutState extends State<About> with SingleTickerProviderStateMixin {
     );
 
     var cardTitle = new Container(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(10.0),
       child: new Row(
         children: [
           new Expanded(
@@ -104,17 +78,12 @@ class _AboutState extends State<About> with SingleTickerProviderStateMixin {
               ],
             ),
           ),
-          new Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          new Text('41'),
         ],
       ),
     );
 
     var cardDis = new Container(
-      padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+      padding: EdgeInsets.all(10.0),
       child: new Text(
         content,
         softWrap: true,
@@ -128,8 +97,7 @@ class _AboutState extends State<About> with SingleTickerProviderStateMixin {
 
     var card = new Container(
         alignment: Alignment.center,
-        padding: new EdgeInsets.only(
-            left: 15.0, top: 15.0, right: 15.0, bottom: 15.0),
+        padding: new EdgeInsets.only(bottom: 15.0),
         child: new Container(
             alignment: Alignment.center,
             padding: new EdgeInsets.only(
