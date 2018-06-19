@@ -37,19 +37,19 @@ class HomePageState extends State<HomePage>
     var leader = new Text(
       "LEADER",
       style: new TextStyle(
-          fontSize: 50.0, fontStyle: FontStyle.normal, fontFamily: 'Roboto'),
+          fontSize: 30.0, fontStyle: FontStyle.normal, fontFamily: 'Roboto'),
       textAlign: TextAlign.left,
     );
     var entrepreneur = new Text(
       "ENTREPRENEUR",
       style: new TextStyle(
-          fontSize: 50.0, fontStyle: FontStyle.normal, fontFamily: 'Roboto'),
+          fontSize: 30.0, fontStyle: FontStyle.normal, fontFamily: 'Roboto'),
       textAlign: TextAlign.left,
     );
     var innovator = new Text(
       "INNOVATOR",
       style: new TextStyle(
-          fontSize: 50.0, fontStyle: FontStyle.normal, fontFamily: 'Roboto'),
+          fontSize: 30.0, fontStyle: FontStyle.normal, fontFamily: 'Roboto'),
       textAlign: TextAlign.left,
     );
 
