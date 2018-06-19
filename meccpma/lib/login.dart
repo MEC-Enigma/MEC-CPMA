@@ -11,46 +11,37 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
+
+  var header = new Text(
+    "Login",
+    style: new TextStyle(
+      fontSize: 30.0,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+      fontFamily: 'Roboto',
+      color: Colors.red,
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
+
     return new Scaffold(
-        resizeToAvoidBottomPadding: true,
-        body: new Container(
-            alignment: Alignment.center,
-            child: new ListView(children: [options(), login()])));
-  }
+        appBar: AppBar(
+          brightness: Brightness.light,
+          iconTheme: IconThemeData(color: Colors.black,),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          title: header,
+          actions: <Widget>[
+            new IconButton(icon: Icon(Icons.share, color: Colors.black,), onPressed: null)
+          ],
+        ),
 
-  Widget options() {
-    var header = new Text(
-      "Login",
-      style: new TextStyle(
-        fontSize: 30.0,
-        fontWeight: FontWeight.bold,
-        fontStyle: FontStyle.normal,
-        fontFamily: 'Roboto Bold',
-        color: Colors.red,
-      ),
-    );
-
-    var back = new BackButton(
-      color: Colors.black,
-    );
-
-    var share = new IconButton(
-      icon: new Icon(Icons.account_circle),
-      onPressed: () {},
-    );
-
-    var column = new Container(
-        alignment: Alignment.topCenter,
-        child: new Container(
-            alignment: Alignment.topCenter,
-            child: new Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[back, header, share],
-            )));
-    return column;
+        body: ListView(
+          padding: EdgeInsets.only(top: 100.0),
+          children: <Widget>[login()],
+        ));
   }
 
   Widget login() {
@@ -83,10 +74,6 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     var _password;
 
     var signinButton = new FlatButton(
-        //shape: new RoundedRectangleBorder(
-        // borderRadius: BorderRadius.circular(5.0),
-
-        //),
         color: Color(0xff0072c6),
         onPressed: () {
           {
@@ -100,25 +87,23 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
         ));
 
     var column = new Container(
-        padding: new EdgeInsets.only(top: 50.0),
         child: new Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(bottom: 20.0),
-              child: outlookLogo,
+            Center(
+                child: outlookLogo
             ),
-            Container(
-              width: 275.0,
-              child: email,
-            ),
+             Container(
+                width: 275.0,
+                child: email,
+              ),
+
             Container(
               width: 275.0,
               child: password,
             ),
             Container(
-              padding: EdgeInsets.only(top: 15.0),
+              //padding: EdgeInsets.only(top: 15.0),
               width: 275.0,
               child: signinButton,
             )
