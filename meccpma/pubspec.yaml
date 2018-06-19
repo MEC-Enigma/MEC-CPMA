@@ -47,7 +47,7 @@ flutter:
     - assets/MEC_Blog_Header1.jpg
     - assets/twitter.png
     - assets/facebook.png
-    - assets/youtube.png
+    - assets/LinkedIn.png
 
   fonts:
     - family: Times New Roman
