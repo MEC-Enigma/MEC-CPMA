@@ -10,25 +10,33 @@ class Gallery extends StatefulWidget {
 }
 
 class _GalleryState extends State<Gallery> with SingleTickerProviderStateMixin {
+
+  var header = new Text(
+    "Gallery",
+    style: new TextStyle(
+      fontSize: 30.0,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+      fontFamily: 'Roboto',
+      color: Colors.red,
+    ),
+  );
+
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Column(
-        children: <Widget>[
-          new Expanded(
-              flex: 1,
-              child: new Container(
-                color: Color(0xffffffff),
-                child: options(),
-              )),
-          new Expanded(
-              flex: 9,
-              child: new Container(
-                color: Color(0xffffffff),
-                child: cardsGrid(),
-              ))
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black,),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        title: header,
+        actions: <Widget>[
+          new IconButton(icon: Icon(Icons.share, color: Colors.black,), onPressed: null)
         ],
       ),
+
+      body: cardsGrid()
     );
   }
 
@@ -80,11 +88,11 @@ class _GalleryState extends State<Gallery> with SingleTickerProviderStateMixin {
   GridView cardsGrid() {
     var grid = GridView.count(
         shrinkWrap: false,
-        padding: EdgeInsets.all(1.0),
+        padding: EdgeInsets.all(10.0),
         crossAxisCount: 3,
         childAspectRatio: 1.0,
-        mainAxisSpacing: 1.0,
-        crossAxisSpacing: 1.0,
+        mainAxisSpacing: 5.0,
+        crossAxisSpacing: 5.0,
         children: <Widget>[
           Image(image: AssetImage('assets/pupp.jpg')),
           Image(image: AssetImage('assets/pupp.jpg')),
