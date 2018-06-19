@@ -88,7 +88,7 @@ class _GalleryState extends State<Gallery> with SingleTickerProviderStateMixin {
   GridView cardsGrid() {
     var grid = GridView.count(
         shrinkWrap: false,
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(5.0),
         crossAxisCount: 3,
         childAspectRatio: 1.0,
         mainAxisSpacing: 5.0,
