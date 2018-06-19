@@ -11,6 +11,8 @@ class StudentHome extends StatefulWidget {
 class _StudentHomeState extends State<StudentHome> {
   @override
   Widget build(BuildContext context) {
+
+
     Column buildIconColumn(IconData icon, String label) {
       Color color = Colors.black;
 
@@ -84,7 +86,10 @@ class _StudentHomeState extends State<StudentHome> {
     ];
 
     var buttonSection = new Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.end,
+
       children: <Widget>[
         Container(
           child: makeRow(row1),
@@ -101,7 +106,8 @@ class _StudentHomeState extends State<StudentHome> {
         Container(
           child: makeRow(row4),
           padding: EdgeInsets.only(top: 30.0),
-        )
+        ),
+
       ],
     );
 
@@ -113,32 +119,56 @@ class _StudentHomeState extends State<StudentHome> {
           fontFamily: 'Times New Roman'),
     );
 
-    var titleLogo = new Image(image: new AssetImage('assets/mec_side.jpg'));
+    var titleLogo = new Image(image: new AssetImage('assets/mec.png'), width: 50.0,);
+
+    var mecName = new Text('Mahindra\n\u00C9cole Centrale',
+    style: TextStyle(
+      fontFamily: 'Times New Roman',
+      fontSize: 12.5
+    ),);
+
+    var mecLogo = new Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        titleLogo,
+        Container(
+          padding: EdgeInsets.only(left: 3.0),
+          child: mecName,
+        )
+      ],
+    );
 
     return new MaterialApp(
       home: new Scaffold(
           backgroundColor: Color(0xfff8f8f8),
-          body: new ListView(
-            shrinkWrap: true,
-            children: <Widget>[
-              Container(
-                //color: Colors.blue,
-                alignment: AlignmentDirectional.topCenter,
-                padding: EdgeInsets.only(bottom: 30.0),
-                child: titleLogo,
-              ),
-              Container(
+          body: Container(
+            //constraints: BoxConstraints.tightForFinite(width: double.infinity, height: double.infinity),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
+                    begin: FractionalOffset.topCenter,
+                    end: FractionalOffset.bottomCenter
+            )
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+              children: <Widget>[
+                Container(
+                    padding: EdgeInsets.only(top: 10.0),
+                    child: mecLogo),
+                Container(
                   alignment: Alignment.centerLeft,
-                  //color: Colors.green,
-                  padding: EdgeInsets.all(20.0),
-                  child: mecTag),
-              Container(
-                alignment: AlignmentDirectional.bottomEnd,
-                //color: Colors.red,
-                child: buttonSection,
-              )
-            ],
-          )),
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: mecTag,
+                ),
+                buttonSection
+              ],
+
+            )),
+          ),
     );
   }
 }
