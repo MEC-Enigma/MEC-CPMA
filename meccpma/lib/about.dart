@@ -36,6 +36,12 @@ class _AboutState extends State<About> with SingleTickerProviderStateMixin {
         ),
 
         body: new Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
+                    begin: FractionalOffset.topCenter,
+                    end: FractionalOffset.bottomCenter
+                )
+            ),
             alignment: Alignment.center,
             child: cardList()
         ));

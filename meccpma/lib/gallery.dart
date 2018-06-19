@@ -36,7 +36,15 @@ class _GalleryState extends State<Gallery> with SingleTickerProviderStateMixin {
         ],
       ),
 
-      body: cardsGrid()
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
+                begin: FractionalOffset.topCenter,
+                end: FractionalOffset.bottomCenter
+            )
+        ),
+        child: cardsGrid(),
+      )
     );
   }
 
@@ -95,20 +103,29 @@ class _GalleryState extends State<Gallery> with SingleTickerProviderStateMixin {
         crossAxisSpacing: 5.0,
         children: <Widget>[
           Image(image: AssetImage('assets/pupp.jpg')),
+          Image(image: AssetImage('assets/r1.jpg')),
+          Image(image: AssetImage('assets/r2.jpg')),
+          Image(image: AssetImage('assets/r3.jpg')),
+          Image(image: AssetImage('assets/r4.jpg')),
+          Image(image: AssetImage('assets/r6.jpg')),
           Image(image: AssetImage('assets/pupp.jpg')),
+          Image(image: AssetImage('assets/r1.jpg')),
+          Image(image: AssetImage('assets/r2.jpg')),
+          Image(image: AssetImage('assets/r3.jpg')),
+          Image(image: AssetImage('assets/r4.jpg')),
+          Image(image: AssetImage('assets/r6.jpg')),
           Image(image: AssetImage('assets/pupp.jpg')),
+          Image(image: AssetImage('assets/r1.jpg')),
+          Image(image: AssetImage('assets/r2.jpg')),
+          Image(image: AssetImage('assets/r3.jpg')),
+          Image(image: AssetImage('assets/r4.jpg')),
+          Image(image: AssetImage('assets/r6.jpg')),
           Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
-          Image(image: AssetImage('assets/pupp.jpg')),
+          Image(image: AssetImage('assets/r1.jpg')),
+          Image(image: AssetImage('assets/r2.jpg')),
+          Image(image: AssetImage('assets/r3.jpg')),
+          Image(image: AssetImage('assets/r4.jpg')),
+          Image(image: AssetImage('assets/r6.jpg')),
         ]);
 
     return grid;

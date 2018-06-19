@@ -18,18 +18,32 @@ class HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body: new Container(
-            alignment: Alignment.center,
-            padding: new EdgeInsets.only(left: 8.0, top: 10.0, right: 8.0),
-            child: new Column(
+        body: Container(
+          //constraints: BoxConstraints.tightForFinite(width: double.infinity, height: double.infinity),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
+                    begin: FractionalOffset.topCenter,
+                    end: FractionalOffset.bottomCenter
+                )
+            ),
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                topImage(),
-                motto(),
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+              children: <Widget>[
+                Container(
+                    padding: EdgeInsets.only(top: 10.0),
+                    child: topImage()),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: motto(),
+                ),
                 firstRow(),
-                secondRow(),
+                secondRow()
               ],
+
             )));
   }
 
@@ -41,13 +55,13 @@ class HomePageState extends State<HomePage>
       textAlign: TextAlign.left,
     );
     var entrepreneur = new Text(
-      "ENTREPRENEUR",
+      "INNOVATOR",
       style: new TextStyle(
           fontSize: 30.0, fontStyle: FontStyle.normal, fontFamily: 'Roboto'),
       textAlign: TextAlign.left,
     );
     var innovator = new Text(
-      "INNOVATOR",
+      "ENTREPRENEUR",
       style: new TextStyle(
           fontSize: 30.0, fontStyle: FontStyle.normal, fontFamily: 'Roboto'),
       textAlign: TextAlign.left,
@@ -70,11 +84,29 @@ class HomePageState extends State<HomePage>
   }
 
   Widget topImage() {
-    var mecLogo =
-        new Image(image: new AssetImage('assets/mec_side.jpg'), width: 200.0);
+    var titleLogo = new Image(image: new AssetImage('assets/mec.png'), width: 50.0,);
+
+    var mecName = new Text('Mahindra\n\u00C9cole Centrale',
+      style: TextStyle(
+          fontFamily: 'Times New Roman',
+          fontSize: 12.5,
+
+      ),);
+
+    var mecLogo = new Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        titleLogo,
+        Container(
+          padding: EdgeInsets.only(left: 4.0),
+          child: mecName,
+        )
+      ],
+    );
     var column = new Container(
         alignment: Alignment.center,
-        padding: new EdgeInsets.only(top: 10.0),
+        //padding: new EdgeInsets.only(top: 10.0),
         child: new Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,

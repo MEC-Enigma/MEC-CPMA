@@ -112,11 +112,11 @@ class _StudentHomeState extends State<StudentHome> {
     );
 
     var mecTag = new Text(
-      'Leader\nInnovator\nEntrepreneur',
+      'LEADER\nINNOVATOR\nENTREPRENEUR',
       style: TextStyle(
-          fontSize: 25.0,
+          fontSize: 30.0,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Times New Roman'),
+          fontFamily: 'Roboto'),
     );
 
     var titleLogo = new Image(image: new AssetImage('assets/mec.png'), width: 50.0,);
@@ -133,7 +133,7 @@ class _StudentHomeState extends State<StudentHome> {
       children: <Widget>[
         titleLogo,
         Container(
-          padding: EdgeInsets.only(left: 3.0),
+          padding: EdgeInsets.only(left: 4.0),
           child: mecName,
         )
       ],

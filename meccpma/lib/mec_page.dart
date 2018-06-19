@@ -12,7 +12,7 @@ class _MECPageState extends State<MECPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: _buildBody(),
+      body: _buildBody()
     );
   }
 

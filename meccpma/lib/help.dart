@@ -25,6 +25,7 @@ class _HelpState extends State<Help> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: AppBar(
+
           brightness: Brightness.light,
           iconTheme: IconThemeData(color: Colors.black,),
           centerTitle: true,
@@ -35,6 +36,13 @@ class _HelpState extends State<Help> with SingleTickerProviderStateMixin {
           ],
         ),
 
-        body: null);
+        body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
+                  begin: FractionalOffset.topCenter,
+                  end: FractionalOffset.bottomCenter
+              )
+          ),
+        ));
   }
 }

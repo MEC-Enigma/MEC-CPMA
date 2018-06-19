@@ -123,6 +123,12 @@ class _BlogState extends State<Blog> with SingleTickerProviderStateMixin {
         ),
 
         body: new Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
+                    begin: FractionalOffset.topCenter,
+                    end: FractionalOffset.bottomCenter
+                )
+            ),
             alignment: Alignment.center,
             padding: new EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0),
             child: new ListView(
@@ -217,15 +223,24 @@ class viewBlog extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.black),
         //title: new Text("${blog.title}"),
       ),
-      body: ListView(
-        children: <Widget>[
-          Container(
-            alignment: Alignment.center,
-            padding: EdgeInsets.all(16.0),
-            child: makeCard(blog.image, blog.title, blog.description),
-          )
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
+                begin: FractionalOffset.topCenter,
+                end: FractionalOffset.bottomCenter
+            )
+        ),
+        child:       ListView(
+          children: <Widget>[
+            Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(16.0),
+              child: makeCard(blog.image, blog.title, blog.description),
+            )
+          ],
+        ),
       )
+
     );
   }
 }
