@@ -112,6 +112,7 @@ class _BlogState extends State<Blog> with SingleTickerProviderStateMixin {
 
     return new Scaffold(
         appBar: AppBar(
+          brightness: Brightness.light,
           iconTheme: IconThemeData(color: Colors.black,),
           centerTitle: true,
           backgroundColor: Colors.white,
