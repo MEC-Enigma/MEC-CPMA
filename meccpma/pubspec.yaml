@@ -8,6 +8,8 @@ dependencies:
   flutter_statusbarcolor: any
   image_carousel: "^0.4.1"
   flutter_custom_tabs: "^0.2.0"
+  html5lib: any
+  http: "^0.11.3+16"
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -54,6 +56,7 @@ flutter:
     - assets/r3.jpg
     - assets/r4.jpg
     - assets/r6.jpg
+    - assets/library.png
 
   fonts:
     - family: Times New Roman

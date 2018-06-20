@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
 
 class MECPage extends StatefulWidget {
   MECPage({Key key}) : super(key: key);
@@ -12,7 +11,15 @@ class _MECPageState extends State<MECPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: _buildBody()
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
+                begin: FractionalOffset.topCenter,
+                end: FractionalOffset.bottomCenter
+            )
+        ),
+        child: _buildBody(),
+      )
     );
   }
 

@@ -1,10 +1,4 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
-import 'about.dart';
-import 'gallery.dart';
-import 'blog.dart';
-import 'social.dart';
-import 'help.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'second_page.dart';
 
 class StudentHome extends StatefulWidget {
   StudentHome({Key key}) : super(key: key);

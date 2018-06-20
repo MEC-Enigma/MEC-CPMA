@@ -11,12 +11,12 @@ class Blog extends StatefulWidget {
 }
 
 
-class newBlog {
+class NewBlog {
   final String title;
   final String image;
   final String description;
 
-  newBlog(this.image, this.title, this.description);
+  NewBlog(this.image, this.title, this.description);
 }
 
 class _BlogState extends State<Blog> with SingleTickerProviderStateMixin {
@@ -36,7 +36,7 @@ class _BlogState extends State<Blog> with SingleTickerProviderStateMixin {
 
 
     List blogTitles = [
-      newBlog('assets/31-March-1.1-min.jpg', '10 Reasons why you should apply early',
+      NewBlog('assets/31-March-1.1-min.jpg', '10 Reasons why you should apply early',
           'MEC’s Early Decision/or/and/Action Plan is known to save students a great deal of stress, time and money during the Admission Process. '
               'You are eligible to apply even before your entrance test results. Besides the obvious benefits, the advantages of applying early '
               'are many, and can add a lot of value to your college life and career in the long run. So, here are 10 reasons why applying early '
@@ -66,8 +66,8 @@ class _BlogState extends State<Blog> with SingleTickerProviderStateMixin {
               'college. They will not see you as often once you are in college. You will be absorbed in your own life out there! So sit with them and '
               'let them tell you stories from their college life. It will feel good. '),
 
-      newBlog('assets/Civil-Engineering-min.jpg', 'What would we do without Civil Engineers?', 'If you have an acumen for maths and science, and have been considering a career in Civil Engineering, you are probably headed in the right direction'),
-      newBlog('assets/MEC_Blog_Header1.jpg', 'HERBIE, this time around, is not a Disney movie…', 'HERBIE, a Volkswagen Beetle in a series of Disney films'
+      NewBlog('assets/Civil-Engineering-min.jpg', 'What would we do without Civil Engineers?', 'If you have an acumen for maths and science, and have been considering a career in Civil Engineering, you are probably headed in the right direction'),
+      NewBlog('assets/MEC_Blog_Header1.jpg', 'HERBIE, this time around, is not a Disney movie…', 'HERBIE, a Volkswagen Beetle in a series of Disney films'
               ' in the 1960s, had its share of misadventures but the ending was always a happy one. How dearly the bosses at Volkswagen must be wishing '
     'that the latest misadventure due to deliberate and systematic fraud by the company followed those Disney movie plots of the bygone era! On the '
     'contrary, the fallout of ‘Diesel Gate’, already cataclysmic, is threatening to reach epic proportions. The company faces, in billions of dollars,'
@@ -97,7 +97,7 @@ class _BlogState extends State<Blog> with SingleTickerProviderStateMixin {
           Navigator.push(
             context,
             new MaterialPageRoute(
-              builder: (context) => new viewBlog(blog: i),
+              builder: (context) => new ViewBlog(blog: i),
             ),
           );
         },
@@ -207,12 +207,12 @@ Widget makeCard(location, mainTitle, des) {
 }
 
 
-class viewBlog extends StatelessWidget {
+class ViewBlog extends StatelessWidget {
   // Declare a field that holds the Todo
-  final newBlog blog;
+  final NewBlog blog;
 
   // In the constructor, require a Todo
-  viewBlog({Key key, @required this.blog}) : super(key: key);
+  ViewBlog({Key key, @required this.blog}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -221,7 +221,6 @@ class viewBlog extends StatelessWidget {
       appBar: new AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
-        //title: new Text("${blog.title}"),
       ),
       body: Container(
         decoration: BoxDecoration(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'mec_page.dart';
 import 'gallery.dart';
@@ -11,11 +10,12 @@ import 'login.dart';
 import 'social.dart';
 import 'student_home.dart';
 import 'home_page.dart';
+import 'library.dart';
 
 void main() {
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]);
+  //SystemChrome.setPreferredOrientations([
+    //DeviceOrientation.portraitUp,
+  //]);
 
   runApp(new MyApp());
 }
@@ -34,7 +34,8 @@ class MyApp extends StatelessWidget {
         '/login': (context) => new Login(),
         '/mecpage': (context) => new MECPage(),
         '/studenthome': (context) => new StudentHome(),
-        '/social': (context) => new Social()
+        '/social': (context) => new Social(),
+        '/library': (context) => new Library()
       },
       home: new MECPage(),
     );

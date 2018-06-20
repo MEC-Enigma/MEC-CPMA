@@ -27,28 +27,6 @@ class _SecondPageState extends State<SecondPage> {
         decoration: new BoxDecoration(color: Color(0xfff8f8f8)),
         child: layout);
 
-    Column buildIconColumn(IconData icon, String label) {
-      Color color = Theme.of(context).primaryColor;
-
-      return new Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          new Icon(icon, color: color),
-          new Container(
-            margin: const EdgeInsets.only(top: 8.0),
-            child: new Text(
-              label,
-              style: new TextStyle(
-                fontSize: 12.0,
-                fontWeight: FontWeight.w500,
-                color: color,
-              ),
-            ),
-          )
-        ],
-      );
-    }
 
     return new MaterialApp(
       home: new Scaffold(
