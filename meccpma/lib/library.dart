@@ -260,11 +260,6 @@ class _LibraryState extends State<Library> with SingleTickerProviderStateMixin {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
-                begin: FractionalOffset.topCenter,
-                end: FractionalOffset.bottomCenter)),
         padding: EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[

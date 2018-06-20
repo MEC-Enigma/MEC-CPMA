@@ -142,30 +142,27 @@ class _StudentHomeState extends State<StudentHome> {
       home: new Scaffold(
           backgroundColor: Color(0xfff8f8f8),
           body: Container(
-            //constraints: BoxConstraints.tightForFinite(width: double.infinity, height: double.infinity),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
-                    begin: FractionalOffset.topCenter,
-                    end: FractionalOffset.bottomCenter
-            )
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-
+            child: ListView(
               children: <Widget>[
-                Container(
-                    padding: EdgeInsets.only(top: 10.0),
-                    child: mecLogo),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: mecTag,
-                ),
-                buttonSection
-              ],
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
 
+                  children: <Widget>[
+                    Container(
+                        padding: EdgeInsets.only(top: 10.0),
+                        child: mecLogo),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      padding: EdgeInsets.only(left: 20.0, top: 30.0),
+                      child: mecTag,
+                    ),
+                    buttonSection
+                  ],
+
+                )
+              ],
             )),
           ),
     );

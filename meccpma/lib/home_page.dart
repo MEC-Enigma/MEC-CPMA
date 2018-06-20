@@ -14,12 +14,6 @@ class HomePageState extends State<HomePage>
     return new Scaffold(
         body: Container(
           //constraints: BoxConstraints.tightForFinite(width: double.infinity, height: double.infinity),
-            decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
-                    begin: FractionalOffset.topCenter,
-                    end: FractionalOffset.bottomCenter
-                )
-            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,

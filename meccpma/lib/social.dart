@@ -35,12 +35,6 @@ class _SocialState extends State<Social> with SingleTickerProviderStateMixin {
           ]
         ),
         body: new Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
-                    begin: FractionalOffset.topCenter,
-                    end: FractionalOffset.bottomCenter
-                )
-            ),
             alignment: Alignment.center,
             padding: new EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 18.0),
             child: new Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'mec_page.dart';
 import 'gallery.dart';
@@ -13,9 +14,9 @@ import 'home_page.dart';
 import 'library.dart';
 
 void main() {
-  //SystemChrome.setPreferredOrientations([
-    //DeviceOrientation.portraitUp,
-  //]);
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
 
   runApp(new MyApp());
 }

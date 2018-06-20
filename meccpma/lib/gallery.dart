@@ -37,12 +37,6 @@ class _GalleryState extends State<Gallery> with SingleTickerProviderStateMixin {
       ),
 
       body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Color(0xffe09fb0), Color(0xff9fa6e0)],
-                begin: FractionalOffset.topCenter,
-                end: FractionalOffset.bottomCenter
-            )
-        ),
         child: cardsGrid(),
       )
     );
